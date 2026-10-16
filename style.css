@@ -1,0 +1,108 @@
+/* ========= CORES (mude aqui e o site inteiro muda) ========= */
+:root {
+  --marinho: #0b1237;        /* fundo principal */
+  --marinho-claro: #151e4f;  /* fundo das seções alternadas */
+  --roxo: #7c3aed;           /* cor de destaque */
+  --roxo-claro: #c4b5fd;     /* títulos e detalhes */
+  --texto: #eceafc;          /* texto geral */
+  --caixa: #1b2563;          /* fundo das caixas */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--marinho);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--roxo-claro); }
+h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+h4 { font-size: 1.1rem; color: #fff; margin-bottom: .5rem; }
+
+/* ========= MENU ========= */
+.topo {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+  padding: .8rem 5%;
+  background: rgba(11, 18, 55, .95);
+  border-bottom: 2px solid var(--roxo);
+}
+.logo { font-family: Georgia, serif; font-size: 1.4rem; font-weight: bold; color: #fff; text-decoration: none; }
+.topo nav a { color: var(--texto); text-decoration: none; margin-left: 1.2rem; }
+.topo nav a:hover { color: var(--roxo-claro); }
+
+/* ========= ESTRUTURA ========= */
+.conteudo { max-width: 1000px; margin: 0 auto; padding: 0 5%; }
+.secao { padding: 4.5rem 0; }
+.secao.clara { background: var(--marinho-claro); }
+.faixa { padding: 3rem 0; }
+.intro { max-width: 65ch; margin-bottom: 2rem; }
+
+/* ========= HOME ========= */
+.hero {
+  padding: 9rem 0 5rem;
+  background: linear-gradient(160deg, var(--marinho) 40%, #3b1d8f 100%);
+  text-align: center;
+}
+.hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.15; margin-bottom: 1rem; }
+.slogan { font-size: 1.2rem; margin-bottom: 3rem; }
+.pergunta { font-size: 1.3rem; margin-bottom: 1rem; color: #fff; }
+.idades { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.idades a {
+  background: var(--roxo); color: #fff; text-decoration: none;
+  padding: 1rem 2rem; border-radius: 50px; font-weight: bold;
+  transition: transform .2s;
+}
+.idades a:hover { transform: scale(1.07); }
+
+/* ========= CAIXAS ========= */
+.duas-colunas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.tres-colunas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+.caixa {
+  background: var(--caixa);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 5px solid var(--roxo-claro);
+}
+.caixa.destaque { border-left-color: var(--roxo); background: #2a1a6e; }
+.caixa.largo { margin-top: 1.5rem; }
+.caixa ul { padding-left: 1.2rem; }
+
+/* ========= GOLPES ========= */
+.golpes { background: linear-gradient(180deg, var(--marinho) 0%, #2a1465 100%); }
+
+/* ========= FORMULÁRIOS ========= */
+label { display: block; margin-top: 1rem; }
+input[type="number"] {
+  width: 100%; padding: .6rem; margin-top: .3rem;
+  border-radius: 8px; border: 2px solid var(--roxo-claro);
+  background: var(--marinho); color: #fff; font-size: 1rem;
+}
+.pergunta-quiz { margin-top: 1.2rem; font-weight: bold; color: #fff; }
+.opcao { margin-top: .4rem; cursor: pointer; }
+
+.botao {
+  margin-top: 1.5rem; padding: .9rem 2rem;
+  background: var(--roxo); color: #fff;
+  border: none; border-radius: 50px;
+  font-size: 1rem; font-weight: bold; cursor: pointer;
+}
+.botao:hover { background: #6425d0; }
+.botao:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+.resultado { margin-top: 1.2rem; font-size: 1.1rem; color: var(--roxo-claro); }
+.nota { margin-top: .8rem; font-size: .9rem; opacity: .8; }
+
+.rodape { padding: 2rem 5%; text-align: center; background: #070c26; font-size: .9rem; }
+
+/* ========= CELULAR ========= */
+@media (max-width: 760px) {
+  .duas-colunas, .tres-colunas { grid-template-columns: 1fr; }
+  .topo nav a { margin: 0 .6rem 0 0; font-size: .9rem; }
+}
